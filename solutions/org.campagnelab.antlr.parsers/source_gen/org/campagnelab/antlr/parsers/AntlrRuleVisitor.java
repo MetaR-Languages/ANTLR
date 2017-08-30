@@ -169,10 +169,10 @@ public class AntlrRuleVisitor extends ANTLRv4ParserBaseVisitor {
       SLinkOperations.setTarget(labeledElement, MetaAdapterFactory.getContainmentLink(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x7c18b9e17b73a85L, 0x7c18b9e17b7c72fL, "element"), (SNode) visitBlock(context.block()));
     }
     if (context.ASSIGN() != null) {
-      SPropertyOperations.set(labeledElement, MetaAdapterFactory.getProperty(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x7c18b9e17b73a85L, 0x7c18b9e17ba7f13L, "operator"), "" + (Integer.parseInt(SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)", "LABELING_OPERATOR"), "=")))));
+      SPropertyOperations.set(labeledElement, MetaAdapterFactory.getProperty(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x7c18b9e17b73a85L, 0x7c18b9e17ba7f13L, "operator"), "" + (Integer.parseInt(SEnumOperations.getMemberValue(SEnumOperations.getMember(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, "org.campagnelab.ANTLR", 0x7c18b9e17ba7f37L, "LABELING_OPERATOR", 0x7c18b9e17ba7f38L, "0")))));
     }
     if (context.PLUS_ASSIGN() != null) {
-      SPropertyOperations.set(labeledElement, MetaAdapterFactory.getProperty(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x7c18b9e17b73a85L, 0x7c18b9e17ba7f13L, "operator"), "" + (Integer.parseInt(SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)", "LABELING_OPERATOR"), "+=")))));
+      SPropertyOperations.set(labeledElement, MetaAdapterFactory.getProperty(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x7c18b9e17b73a85L, 0x7c18b9e17ba7f13L, "operator"), "" + (Integer.parseInt(SEnumOperations.getMemberValue(SEnumOperations.getMember(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, "org.campagnelab.ANTLR", 0x7c18b9e17ba7f37L, "LABELING_OPERATOR", 0x7c18b9e17ba7f39L, "1")))));
     }
     return labeledElement;
   }
