@@ -77,6 +77,7 @@
     </echoxml>
     <jar destfile="${build.tmp}/default/ANTLR__dl__lbrace_ANTLR_version_rbrace_.zip/ANTRL/languages/org.campagnelab.ANTLR.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/org.campagnelab.ANTLR" />
+      <fileset dir="${basedir}/languages/org.campagnelab.ANTLR" includes="icons/**, resources/**" />
       <fileset dir="${ANTLR_HOME}/languages/org.campagnelab.ANTLR/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/org.campagnelab.ANTLR.jar" />
     </jar>
@@ -121,6 +122,7 @@
     </echoxml>
     <jar destfile="${build.tmp}/default/ANTLR__dl__lbrace_ANTLR_version_rbrace_.zip/ANTRL/languages/org.campagnelab.antlr.parsers.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/org.campagnelab.antlr.parsers" />
+      <fileset dir="${basedir}/solutions/org.campagnelab.antlr.parsers" includes="icons/**, resources/**" />
       <fileset dir="${ANTLR_HOME}/solutions/org.campagnelab.antlr.parsers/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/org.campagnelab.antlr.parsers.jar" />
     </jar>
@@ -169,6 +171,7 @@
     </echoxml>
     <jar destfile="${build.tmp}/default/ANTLR__dl__lbrace_ANTLR_version_rbrace_.zip/ANTRL/languages/org.campagnelab.antlr.tomps.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/org.campagnelab.antlr.tomps" />
+      <fileset dir="${basedir}/languages/org.campagnelab.antlr.tomps" includes="icons/**, resources/**" />
       <fileset dir="${ANTLR_HOME}/languages/org.campagnelab.antlr.tomps/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/org.campagnelab.antlr.tomps.jar" />
     </jar>
@@ -247,6 +250,7 @@
     </echoxml>
     <jar destfile="${build.tmp}/default/ANTLR__dl__lbrace_ANTLR_version_rbrace_.zip/ANTRL/languages/org.campagnelab.antlr.plugin.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/org.campagnelab.antlr.plugin" />
+      <fileset dir="${basedir}/solutions/org.campagnelab.antlr.plugin" includes="icons/**, resources/**" />
       <fileset dir="${ANTLR_HOME}/solutions/org.campagnelab.antlr.plugin/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/org.campagnelab.antlr.plugin.jar" />
     </jar>
@@ -287,6 +291,7 @@
     </echoxml>
     <jar destfile="${build.tmp}/default/ANTLR__dl__lbrace_ANTLR_version_rbrace_.zip/ANTRL/lib/org.campagnelab.antlr.parsers.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/org.campagnelab.antlr.parsers" />
+      <fileset dir="${basedir}/solutions/org.campagnelab.antlr.parsers" includes="icons/**, resources/**" />
       <fileset dir="${ANTLR_HOME}/solutions/org.campagnelab.antlr.parsers/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/org.campagnelab.antlr.parsers.jar1" />
     </jar>
@@ -335,6 +340,7 @@
     </echoxml>
     <jar destfile="${build.tmp}/default/ANTLR__dl__lbrace_ANTLR_version_rbrace_.zip/ANTRL/lib/org.campagnelab.ANTLR.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/org.campagnelab.ANTLR" />
+      <fileset dir="${basedir}/languages/org.campagnelab.ANTLR" includes="icons/**, resources/**" />
       <fileset dir="${ANTLR_HOME}/languages/org.campagnelab.ANTLR/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/org.campagnelab.ANTLR.jar1" />
     </jar>
@@ -382,6 +388,7 @@
     </echoxml>
     <jar destfile="${build.tmp}/default/ANTLR__dl__lbrace_ANTLR_version_rbrace_.zip/ANTRL/lib/org.campagnelab.antlr.tomps.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/org.campagnelab.antlr.tomps" />
+      <fileset dir="${basedir}/languages/org.campagnelab.antlr.tomps" includes="icons/**, resources/**" />
       <fileset dir="${ANTLR_HOME}/languages/org.campagnelab.antlr.tomps/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/org.campagnelab.antlr.tomps.jar1" />
     </jar>

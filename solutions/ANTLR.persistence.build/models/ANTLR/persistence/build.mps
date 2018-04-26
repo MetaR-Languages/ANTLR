@@ -16,7 +16,6 @@
       </concept>
       <concept id="6666499814681415858" name="jetbrains.mps.core.xml.structure.XmlElement" flags="ng" index="2pNNFK">
         <property id="6666499814681415862" name="tagName" index="2pNNFO" />
-        <property id="6999033275467544021" name="shortEmptyNotation" index="qg3DV" />
         <child id="6666499814681415861" name="attributes" index="2pNNFR" />
       </concept>
       <concept id="6666499814681447923" name="jetbrains.mps.core.xml.structure.XmlAttribute" flags="ng" index="2pNUuL">
@@ -204,7 +203,7 @@
       <node concept="aVJcg" id="3gMg70bX6HN" role="aVJcv">
         <node concept="NbPM2" id="3gMg70bX6HM" role="aVJcq">
           <node concept="3Mxwew" id="3gMg70bX6HL" role="3MwsjC">
-            <property role="3MwjfP" value="1.1.4" />
+            <property role="3MwjfP" value="1.2" />
           </node>
         </node>
       </node>
@@ -277,19 +276,18 @@
     </node>
     <node concept="m$_wf" id="7twz7e84BNG" role="3989C9">
       <property role="m$_wk" value="org.campagnelab.ANTLR" />
-      <node concept="2pNNFK" id="7twz7e85Mxq" role="20twgj">
+      <node concept="2pNNFK" id="5ayKDoDhh1W" role="20twgj">
         <property role="2pNNFO" value="idea-version" />
-        <property role="qg3DV" value="true" />
-        <node concept="2pNUuL" id="7twz7e85Mxr" role="2pNNFR">
+        <node concept="2pNUuL" id="5ayKDoDhh1X" role="2pNNFR">
           <property role="2pNUuO" value="since-build" />
-          <node concept="2pMdtt" id="7twz7e85Mxs" role="2pMdts">
-            <property role="2pMdty" value="172.1" />
+          <node concept="2pMdtt" id="5ayKDoDhh1Y" role="2pMdts">
+            <property role="2pMdty" value="181.1254" />
           </node>
         </node>
-        <node concept="2pNUuL" id="7twz7e85Mxt" role="2pNNFR">
+        <node concept="2pNUuL" id="5ayKDoDhh1Z" role="2pNNFR">
           <property role="2pNUuO" value="until-build" />
-          <node concept="2pMdtt" id="7twz7e85Mxu" role="2pMdts">
-            <property role="2pMdty" value="172.1127" />
+          <node concept="2pMdtt" id="5ayKDoDhh20" role="2pMdts">
+            <property role="2pMdty" value="182.0000" />
           </node>
         </node>
       </node>
@@ -581,12 +579,6 @@
           <node concept="3bR9La" id="4Om_ff7hiX0" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" to="ffeo:7Kfy9QB6L9O" resolve="jetbrains.mps.lang.smodel" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="4Om_ff7hiX1" role="3bR37C">
-          <node concept="3bR9La" id="4Om_ff7hiX2" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" to="ffeo:7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
           </node>
         </node>
         <node concept="1SiIV0" id="4Om_ff7hoKW" role="3bR37C">
