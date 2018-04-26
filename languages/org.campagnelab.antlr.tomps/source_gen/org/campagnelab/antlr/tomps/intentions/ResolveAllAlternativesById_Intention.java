@@ -24,6 +24,7 @@ import org.apache.log4j.Level;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import org.campagnelab.ANTLR.behavior.Alternative__BehaviorDescriptor;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
 
@@ -67,7 +68,7 @@ public final class ResolveAllAlternativesById_Intention extends AbstractIntentio
           }
           SNode alt = ListSequence.fromList(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6a1bb02ea6061b82L, 0x6a1bb02ea6061be9L, "grammar")), MetaAdapterFactory.getConcept(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe3113b458fL, "org.campagnelab.ANTLR.structure.Alternative"), false, new SAbstractConcept[]{})).findFirst(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return eq_5h3ye5_a0a0a0a0a0a1a0a0a0a0a2h(Alternative__BehaviorDescriptor.id_idv1yTSo00D1.invoke(it), SPropertyOperations.getString(altMapper, MetaAdapterFactory.getProperty(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6a1bb02ea606232bL, 0x7c18b9e17fff06eL, "id")));
+              return Objects.equals(Alternative__BehaviorDescriptor.id_idv1yTSo00D1.invoke(it), SPropertyOperations.getString(altMapper, MetaAdapterFactory.getProperty(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6a1bb02ea606232bL, 0x7c18b9e17fff06eL, "id")));
             }
           });
           if (alt != null) {
@@ -85,8 +86,5 @@ public final class ResolveAllAlternativesById_Intention extends AbstractIntentio
     public IntentionDescriptor getDescriptor() {
       return ResolveAllAlternativesById_Intention.this;
     }
-  }
-  private static boolean eq_5h3ye5_a0a0a0a0a0a1a0a0a0a0a2h(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

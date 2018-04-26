@@ -20,6 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
@@ -64,7 +65,7 @@ public final class AddAllAlternatives_Intention extends AbstractIntentionDescrip
           // only add mapper when (1) one not already present (2) alt is at top level of rule 
           return ListSequence.fromList(altMappers).all(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return neq_4ev8m1_a0a0a0a0a0a2a0a0a0a0a0c0c6(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6a1bb02ea606232bL, 0x6a1bb02ea6062391L, "alternative")), alt);
+              return !(Objects.equals(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6a1bb02ea606232bL, 0x6a1bb02ea6062391L, "alternative")), alt));
             }
           }) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(alt)), MetaAdapterFactory.getConcept(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x175f2668a88648aaL, "org.campagnelab.ANTLR.structure.Rule"));
 
@@ -82,8 +83,5 @@ public final class AddAllAlternatives_Intention extends AbstractIntentionDescrip
     public IntentionDescriptor getDescriptor() {
       return AddAllAlternatives_Intention.this;
     }
-  }
-  private static boolean neq_4ev8m1_a0a0a0a0a0a2a0a0a0a0a0c0c6(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

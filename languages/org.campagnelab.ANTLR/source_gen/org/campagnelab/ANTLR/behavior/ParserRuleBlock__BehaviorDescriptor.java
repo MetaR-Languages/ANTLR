@@ -33,7 +33,7 @@ public final class ParserRuleBlock__BehaviorDescriptor extends BaseBHDescriptor 
   }
 
   /*package*/ static String toText_id4UG6ID2UsRv(@NotNull SNode __thisNode__) {
-    return ((String) ToTextOutput__BehaviorDescriptor.toText_id4UG6ID2UsRv.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe31132d843L, "org.campagnelab.ANTLR.structure.ParserRuleBlock")));
+    return ((String) ToTextOutput__BehaviorDescriptor.toText_id4UG6ID2UsRv.invoke0(__thisNode__, MetaAdapterFactory.getConcept(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x797c10c6e517ac38L, "org.campagnelab.ANTLR.structure.HasOptionalParams")));
   }
   /*package*/ static boolean needsVisit_id3ft5eLKF8lT(@NotNull SNode __thisNode__) {
     return true;

@@ -33,7 +33,7 @@ public final class RuleRefByName__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static String toText_id4UG6ID2UsRv(@NotNull SNode __thisNode__) {
-    return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x1ebae6380de70d78L, 0x1ebae6380de70d79L, "name")) + ToTextOutput__BehaviorDescriptor.toText_id4UG6ID2UsRv.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x1ebae6380de70d78L, "org.campagnelab.ANTLR.structure.RuleRefByName"));
+    return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x1ebae6380de70d78L, 0x1ebae6380de70d79L, "name")) + ToTextOutput__BehaviorDescriptor.toText_id4UG6ID2UsRv.invoke0(__thisNode__, MetaAdapterFactory.getConcept(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe31132d843L, "org.campagnelab.ANTLR.structure.ParserRuleBlock"));
   }
 
   /*package*/ RuleRefByName__BehaviorDescriptor() {

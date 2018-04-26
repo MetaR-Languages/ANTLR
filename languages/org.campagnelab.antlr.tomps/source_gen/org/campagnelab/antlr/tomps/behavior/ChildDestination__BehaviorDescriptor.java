@@ -20,6 +20,7 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.Objects;
 import jetbrains.mps.baseLanguage.logging.runtime.model.LoggingRuntime;
 import org.apache.log4j.Level;
 import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
@@ -56,7 +57,7 @@ public final class ChildDestination__BehaviorDescriptor extends BaseBHDescriptor
     return null;
   }
   /*package*/ static SNode cellModel_id1AEWcuffMHI(@NotNull SNode __thisNode__, String cardinality) {
-    if (eq_5ab1t5_a0a0a71_0(cardinality, "0..n") || eq_5ab1t5_a0a0a71(cardinality, "1..n")) {
+    if (Objects.equals(cardinality, "0..n") || Objects.equals(cardinality, "1..n")) {
       if (LOG.isInfoEnabled()) {
         LoggingRuntime.legacyLog(Level.INFO, "visiting destination (child[..n])", ChildDestination__BehaviorDescriptor.class, null);
       }
@@ -74,7 +75,7 @@ public final class ChildDestination__BehaviorDescriptor extends BaseBHDescriptor
     if (LOG.isInfoEnabled()) {
       LoggingRuntime.legacyLog(Level.INFO, "visiting textGen " + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x4aaf5f3861bb9099L, 0x4aaf5f3861bb96d2L, "to"))), ChildDestination__BehaviorDescriptor.class, null);
     }
-    if (eq_5ab1t5_a0a1a81_0(cardinality, "0..n") || eq_5ab1t5_a0a1a81(cardinality, "1..n")) {
+    if (Objects.equals(cardinality, "0..n") || Objects.equals(cardinality, "1..n")) {
       if (LOG.isInfoEnabled()) {
         LoggingRuntime.legacyLog(Level.INFO, "visiting destination (child[..n])", ChildDestination__BehaviorDescriptor.class, null);
       }
@@ -188,17 +189,5 @@ public final class ChildDestination__BehaviorDescriptor extends BaseBHDescriptor
       n1.addChild(MetaAdapterFactory.getContainmentLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015251a28L, 0x120152c1030L, "value"), n2);
     }
     return n1;
-  }
-  private static boolean eq_5ab1t5_a0a0a71(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_5ab1t5_a0a0a71_0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_5ab1t5_a0a1a81(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_5ab1t5_a0a1a81_0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

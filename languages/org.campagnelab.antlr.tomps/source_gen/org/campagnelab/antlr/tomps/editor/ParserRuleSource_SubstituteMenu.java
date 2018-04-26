@@ -15,13 +15,13 @@ import jetbrains.mps.lang.editor.menus.substitute.IncludeSubstituteMenuSubstitut
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.EditorContext;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.editor.menus.substitute.NamedSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.ConceptMenusPart;
 import java.util.Collection;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 
 public class ParserRuleSource_SubstituteMenu extends SubstituteMenuBase {
@@ -64,7 +64,11 @@ public class ParserRuleSource_SubstituteMenu extends SubstituteMenuBase {
     @Override
     protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
-      return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x3875e55a78eeb7feL, "org.campagnelab.antlr.tomps.structure.ParserRuleSource"), "org.campagnelab.antlr.tomps.editor.ParserRuleSource_SmartReference");
+      SAbstractConcept conceptToFindMenuFor = getConceptToFindMenuFor(_context);
+      return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), conceptToFindMenuFor, "org.campagnelab.antlr.tomps.editor.ParserRuleSource_SmartReference");
+    }
+    private SAbstractConcept getConceptToFindMenuFor(SubstituteMenuContext _context) {
+      return MetaAdapterFactory.getConcept(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x3875e55a78eeb7feL, "org.campagnelab.antlr.tomps.structure.ParserRuleSource");
     }
   }
   public class SMP_Subconcepts_voavkx_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
