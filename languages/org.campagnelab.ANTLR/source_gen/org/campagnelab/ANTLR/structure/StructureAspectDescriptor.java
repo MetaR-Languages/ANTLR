@@ -4,12 +4,16 @@ package org.campagnelab.ANTLR.structure;
 
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAlternative = createDescriptorForAlternative();
@@ -44,10 +48,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptToken = createDescriptorForToken();
   /*package*/ final ConceptDescriptor myConceptTokenRef = createDescriptorForTokenRef();
   /*package*/ final ConceptDescriptor myConceptTokenSpec = createDescriptorForTokenSpec();
-  private final LanguageConceptSwitch myConceptIndex;
+  /*package*/ final EnumerationDescriptor myEnumerationLABELING_OPERATOR = new EnumerationDescriptor_LABELING_OPERATOR();
+  private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
-    myConceptIndex = new LanguageConceptSwitch();
+    myIndexSwitch = new LanguageConceptSwitch();
+  }
+
+
+  @Override
+  public void reportDependencies(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.Dependencies deps) {
+    deps.extendedLanguage(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, "jetbrains.mps.lang.core");
   }
 
   @Override
@@ -58,7 +69,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    switch (myConceptIndex.index(id)) {
+    switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.Alternative:
         return myConceptAlternative;
       case LanguageConceptSwitch.Alternatives:
@@ -128,8 +139,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList(myEnumerationLABELING_OPERATOR);
+  }
+
   /*package*/ int internalIndex(SAbstractConcept c) {
-    return myConceptIndex.index(c);
+    return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForAlternative() {
@@ -138,8 +154,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4eac1aea42e9c6e8L);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/7142405419535385999");
-    b.prop("label", 0x6d831d6acef0ba05L, "7891183316658862597");
-    b.prop("hasLabel", 0x6d831d6acf051327L, "7891183316660196135");
+    b.version(2);
+    b.property("label", 0x6d831d6acef0ba05L).type(PrimitiveTypeId.STRING).origin("7891183316658862597").done();
+    b.property("hasLabel", 0x6d831d6acf051327L).type(PrimitiveTypeId.BOOLEAN).origin("7891183316660196135").done();
     b.aggregate("rhs", 0x631eebe3113b4590L).target(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe31132d843L).optional(true).ordered(true).multiple(false).origin("7142405419535386000").done();
     return b.create();
   }
@@ -149,6 +166,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("org.campagnelab.ANTLR.structure.ParserRuleBlock", 0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe31132d843L);
     b.parent(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4eac1aea42e9c6e8L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/7142405419534833730");
+    b.version(2);
     b.aggregate("oneOf", 0x631eebe31132d969L).target(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe3113b458fL).optional(false).ordered(true).multiple(true).origin("7142405419534834025").done();
     return b.create();
   }
@@ -158,6 +176,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("org.campagnelab.ANTLR.structure.SetElement", 0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x1eb5241d3a06beb9L);
     b.parent(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4eac1aea42e9c6e8L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/2212714499869525789");
+    b.version(2);
     b.aggregate("elements", 0x1eb5241d3a155e67L).target(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x1eb5241d3a06beb9L).optional(false).ordered(true).multiple(true).origin("2212714499869597287").done();
     return b.create();
   }
@@ -167,6 +186,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("org.campagnelab.ANTLR.structure.LexerElement", 0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4e506a1ba15f4aa4L);
     b.parent(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4eac1aea42e9c6e8L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/1684107016605283314");
+    b.version(2);
     b.alias(".");
     return b.create();
   }
@@ -176,6 +196,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.parent(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4eac1aea42e9c6e8L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/7142405419534787241");
+    b.version(2);
     b.aggregate("tokens", 0x7c18b9e171fc275L).target(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x7c18b9e171f1505L).optional(true).ordered(true).multiple(false).origin("558881339879703157").done();
     b.aggregate("rules", 0x631eebe31132d83bL).target(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x175f2668a88648aaL).optional(true).ordered(true).multiple(true).origin("7142405419534833723").done();
     return b.create();
@@ -185,9 +206,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.parent(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4eac1aea42e9c6e8L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/8753890222134504504");
-    b.prop("isOptional", 0x797c10c6e517b02cL, "8753890222134505516");
-    b.prop("acceptMultiple", 0x797c10c6e517bbd3L, "8753890222134508499");
-    b.prop("plus", 0x797c10c6e517bcdaL, "8753890222134508762");
+    b.version(2);
+    b.property("isOptional", 0x797c10c6e517b02cL).type(PrimitiveTypeId.BOOLEAN).origin("8753890222134505516").done();
+    b.property("acceptMultiple", 0x797c10c6e517bbd3L).type(PrimitiveTypeId.BOOLEAN).origin("8753890222134508499").done();
+    b.property("plus", 0x797c10c6e517bcdaL).type(PrimitiveTypeId.BOOLEAN).origin("8753890222134508762").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForLabeledElement() {
@@ -196,7 +218,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("org.campagnelab.ANTLR.structure.ParserRuleBlock", 0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe31132d843L);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/558881339889629829");
-    b.prop("operator", 0x7c18b9e17ba7f13L, "558881339889843987");
+    b.version(2);
+    b.property("operator", 0x7c18b9e17ba7f13L).type(MetaIdFactory.dataTypeId(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x7c18b9e17ba7f37L)).origin("558881339889843987").done();
     b.aggregate("element", 0x7c18b9e17b7c72fL).target(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe31132d843L).optional(false).ordered(true).multiple(false).origin("558881339889665839").done();
     return b.create();
   }
@@ -205,6 +228,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.parent(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4eac1aea42e9c6e8L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/1684107016605738537");
+    b.version(2);
     b.aggregate("elements", 0x175f2668a887262aL).target(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4e506a1ba15f4aa4L).optional(false).ordered(true).multiple(true).origin("1684107016605738538").done();
     return b.create();
   }
@@ -214,6 +238,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("org.campagnelab.ANTLR.structure.ParserRuleBlock", 0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe31132d843L);
     b.parent(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4eac1aea42e9c6e8L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/5643127000001205075");
+    b.version(2);
     b.aggregate("alternatives", 0x4e506a1ba17cd759L).target(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x175f2668a8872629L).optional(false).ordered(true).multiple(true).origin("5643127000001206105").done();
     return b.create();
   }
@@ -223,6 +248,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("org.campagnelab.ANTLR.structure.LexerElement", 0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4e506a1ba15f4aa4L);
     b.parent(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4eac1aea42e9c6e8L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/1539085245680655634");
+    b.version(2);
     b.aggregate("elements", 0x155bede063d71d13L).target(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4e506a1ba17cd353L).optional(false).ordered(true).multiple(true).origin("1539085245680655635").done();
     return b.create();
   }
@@ -232,6 +258,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("org.campagnelab.ANTLR.structure.ParserRuleBlock", 0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe31132d843L);
     b.parent(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4eac1aea42e9c6e8L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/5643126999999269540");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForLexerRule() {
@@ -240,6 +267,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("org.campagnelab.ANTLR.structure.Rule", 0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x175f2668a88648aaL);
     b.parent(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4eac1aea42e9c6e8L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/1684107016605681841");
+    b.version(2);
     b.aggregate("rhs", 0x175f2668a886ac7dL).target(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x175f2668a886ac85L).optional(false).ordered(true).multiple(false).origin("1684107016605707389").done();
     b.alias("lexerRule");
     return b.create();
@@ -249,6 +277,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.parent(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4eac1aea42e9c6e8L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/1684107016605707397");
+    b.version(2);
     b.aggregate("alternatives", 0x175f2668a886aca6L).target(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4e506a1ba17cd353L).optional(false).ordered(true).multiple(false).origin("1684107016605707430").done();
     return b.create();
   }
@@ -258,6 +287,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("org.campagnelab.ANTLR.structure.LexerElement", 0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4e506a1ba15f4aa4L);
     b.parent(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4eac1aea42e9c6e8L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/1684107016606379934");
+    b.version(2);
     b.associate("rule", 0x175f2668a890ef9fL).target(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x175f2668a88648b1L).optional(false).origin("1684107016606379935").done();
     return b.create();
   }
@@ -267,7 +297,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("org.campagnelab.ANTLR.structure.LexerElement", 0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4e506a1ba15f4aa4L);
     b.parent(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4eac1aea42e9c6e8L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/5643127000000497363");
-    b.prop("name", 0x4e506a1ba1720e58L, "5643127000000499288");
+    b.version(2);
+    b.property("name", 0x4e506a1ba1720e58L).type(PrimitiveTypeId.STRING).origin("5643127000000499288").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForLexerToken() {
@@ -277,6 +308,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4eac1aea42e9c6e8L);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/7142405419535590752");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForNotSet() {
@@ -285,6 +317,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("org.campagnelab.ANTLR.structure.LexerElement", 0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4e506a1ba15f4aa4L);
     b.parent(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4eac1aea42e9c6e8L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/987964775448365991");
+    b.version(2);
     b.aggregate("set", 0xdb5f4ba9332cbf4L).target(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x1eb5241d3a06beb9L).optional(false).ordered(true).multiple(false).origin("987964775448366068").done();
     return b.create();
   }
@@ -294,6 +327,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("org.campagnelab.ANTLR.structure.ParserRuleBlock", 0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe31132d843L);
     b.parent(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4eac1aea42e9c6e8L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/2214335295231699448");
+    b.version(2);
     b.aggregate("content", 0x1ebae6380de52a0fL).target(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe31132d846L).optional(false).ordered(true).multiple(false).origin("2214335295231699471").done();
     b.alias("(");
     return b.create();
@@ -304,6 +338,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("org.campagnelab.ANTLR.structure.Rule", 0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x175f2668a88648aaL);
     b.parent(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4eac1aea42e9c6e8L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/7142405419534833720");
+    b.version(2);
     b.aggregate("rhs", 0x631eebe31132d844L).target(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe31132d843L).optional(false).ordered(true).multiple(false).origin("7142405419534833732").done();
     b.alias("parserRule");
     return b.create();
@@ -314,9 +349,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("org.campagnelab.ANTLR.structure.HasOptionalParams", 0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x797c10c6e517ac38L);
     b.parent(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4eac1aea42e9c6e8L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/7142405419534833731");
-    b.prop("isOptional_old", 0x631eebe3113c4245L, "7142405419535450693");
-    b.prop("acceptMultiple_old", 0x631eebe3113c4247L, "7142405419535450695");
-    b.prop("plus_old", 0x72827882b897b9d5L, "8251289970134202837");
+    b.version(2);
+    b.property("isOptional_old", 0x631eebe3113c4245L).type(PrimitiveTypeId.BOOLEAN).origin("7142405419535450693").done();
+    b.property("acceptMultiple_old", 0x631eebe3113c4247L).type(PrimitiveTypeId.BOOLEAN).origin("7142405419535450695").done();
+    b.property("plus_old", 0x72827882b897b9d5L).type(PrimitiveTypeId.BOOLEAN).origin("8251289970134202837").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForParserRuleRef() {
@@ -326,6 +362,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4eac1aea42e9c6e8L);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/7142405419534834022");
+    b.version(2);
     b.associate("rule", 0x631eebe31132d967L).target(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe31132d838L).optional(false).origin("7142405419534834023").done();
     return b.create();
   }
@@ -335,7 +372,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("org.campagnelab.ANTLR.structure.SetElement", 0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x1eb5241d3a06beb9L);
     b.parent(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4eac1aea42e9c6e8L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/7142405419535607099");
-    b.prop("regexp", 0x631eebe3113ea679L, "7142405419535607417");
+    b.version(2);
+    b.property("regexp", 0x631eebe3113ea679L).type(PrimitiveTypeId.STRING).origin("7142405419535607417").done();
     b.alias("[");
     return b.create();
   }
@@ -345,6 +383,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("org.campagnelab.ANTLR.structure.SetElement", 0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x1eb5241d3a06beb9L);
     b.parent(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4eac1aea42e9c6e8L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/987964775451668461");
+    b.version(2);
     b.aggregate("start", 0xdb5f4ba936530dcL).target(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe3113e657fL).optional(false).ordered(true).multiple(false).origin("987964775451668700").done();
     b.aggregate("end", 0xdb5f4ba936530deL).target(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe3113e657fL).optional(false).ordered(true).multiple(false).origin("987964775451668702").done();
     return b.create();
@@ -355,6 +394,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4eac1aea42e9c6e8L);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/1684107016605681834");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForRuleRefByName() {
@@ -363,7 +403,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("org.campagnelab.ANTLR.structure.ParserRuleBlock", 0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe31132d843L);
     b.parent(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4eac1aea42e9c6e8L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/2214335295231823224");
-    b.prop("name", 0x1ebae6380de70d79L, "2214335295231823225");
+    b.version(2);
+    b.property("name", 0x1ebae6380de70d79L).type(PrimitiveTypeId.STRING).origin("2214335295231823225").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSequence() {
@@ -372,6 +413,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("org.campagnelab.ANTLR.structure.ParserRuleBlock", 0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe31132d843L);
     b.parent(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4eac1aea42e9c6e8L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/7142405419534833734");
+    b.version(2);
     b.aggregate("of", 0x631eebe31132d96bL).target(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe31132d843L).optional(false).ordered(true).multiple(true).origin("7142405419534834027").done();
     return b.create();
   }
@@ -380,6 +422,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, true, false);
     b.super_("org.campagnelab.ANTLR.structure.LexerToken", 0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe3113e6560L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/2212714499868638905");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForStringLiteral() {
@@ -388,7 +431,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("org.campagnelab.ANTLR.structure.SetElement", 0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x1eb5241d3a06beb9L);
     b.parent(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4eac1aea42e9c6e8L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/7142405419535590783");
-    b.prop("literal", 0x631eebe3113e6580L, "7142405419535590784");
+    b.version(2);
+    b.property("literal", 0x631eebe3113e6580L).type(PrimitiveTypeId.STRING).origin("7142405419535590784").done();
     b.alias("'");
     return b.create();
   }
@@ -396,6 +440,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("org.campagnelab.ANTLR", "ToTextOutput", 0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4eac1aea42e9c6e8L);
     b.interface_();
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/5668935624399898344");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForToken() {
@@ -403,6 +448,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/558881339879665331");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTokenRef() {
@@ -411,6 +457,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("org.campagnelab.ANTLR.structure.ParserRuleBlock", 0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe31132d843L);
     b.parent(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x4eac1aea42e9c6e8L);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/558881339880718083");
+    b.version(2);
     b.associate("token", 0x7c18b9e172f3f04L).target(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x7c18b9e171f2eb3L).optional(false).origin("558881339880718084").done();
     return b.create();
   }
@@ -418,6 +465,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("org.campagnelab.ANTLR", "TokenSpec", 0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x7c18b9e171f1505L);
     b.class_(false, false, false);
     b.origin("r:579fcb2d-4d1f-46c6-93f9-98775dc55169(org.campagnelab.ANTLR.structure)/558881339879658757");
+    b.version(2);
     b.aggregate("tokens", 0x7c18b9e171f2eb1L).target(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x7c18b9e171f2eb3L).optional(false).ordered(true).multiple(true).origin("558881339879665329").done();
     b.alias("tokens");
     return b.create();

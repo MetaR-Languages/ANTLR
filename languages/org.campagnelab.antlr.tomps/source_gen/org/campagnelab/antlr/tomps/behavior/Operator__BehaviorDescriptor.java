@@ -41,7 +41,7 @@ public final class Operator__BehaviorDescriptor extends BaseBHDescriptor {
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(converter_id1_qnSjmfJ0w, looupOrCreate_id1_qnSjmfIqY, createTextGen_id3V2IUSra$Bd);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
-    SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x195a5f84d619bfbdL, 0x6c9855e84f32c33L, "arity"), "" + (2));
+    SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x195a5f84d619bfbdL, 0x6c9855e84f32c33L, "arity"), 2);
   }
 
   /*package*/ static SNode converter_id1_qnSjmfJ0w(@NotNull SNode __thisNode__) {
@@ -49,9 +49,9 @@ public final class Operator__BehaviorDescriptor extends BaseBHDescriptor {
   }
   /*package*/ static SNode looupOrCreate_id1_qnSjmfIqY(@NotNull SNode __thisNode__, String name) {
     SNode conceptNode = ConceptMapper__BehaviorDescriptor.looupOrCreate_id1_qnSjmlzlr.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x69d936b00a0eba02L, "org.campagnelab.antlr.tomps.structure.ConceptMapper")), ConvertToMPS__BehaviorDescriptor.getLanguage_id1p7oQN$WwRl.invoke(Operator__BehaviorDescriptor.converter_id1_qnSjmfJ0w.invoke(__thisNode__)), name);
-    SPropertyOperations.set(conceptNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), "operators");
+    SPropertyOperations.assign(conceptNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), "operators");
     SLinkOperations.setTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x195a5f84d619bfbdL, 0x195a5f84d62a2bcaL, "concept"), conceptNode);
-    SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x195a5f84d619bfbdL, 0x195a5f84d62d9fc1L, "conceptName"), null);
+    SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x195a5f84d619bfbdL, 0x195a5f84d62d9fc1L, "conceptName"), null);
     return conceptNode;
   }
   /*package*/ static void createTextGen_id3V2IUSra$Bd(@NotNull final SNode __thisNode__, Language language) {

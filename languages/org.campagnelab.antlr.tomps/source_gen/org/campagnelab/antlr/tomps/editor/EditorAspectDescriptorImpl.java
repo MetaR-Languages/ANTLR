@@ -19,8 +19,8 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    SAbstractConcept cncpt_a0a = ((SAbstractConcept) concept);
-    switch (index_xbvbvu_a0a.index(cncpt_a0a)) {
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (conceptIndex.index(cncpt)) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new AlternativeMapper_Editor());
       case 1:
@@ -58,8 +58,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
   @NotNull
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
-    SAbstractConcept cncpt_a0c = ((SAbstractConcept) concept);
-    switch (index_xbvbvu_a0c.index(cncpt_a0c)) {
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (conceptIndex1.index(cncpt)) {
       case 0:
         if (true) {
           if ("org.campagnelab.antlr.tomps.editor.SourceEditorComponent".equals(editorComponentId)) {
@@ -75,8 +75,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    SAbstractConcept cncpt_a0e = concept;
-    switch (index_xbvbvu_a0e.index(cncpt_a0e)) {
+    SAbstractConcept cncpt = concept;
+    switch (conceptIndex2.index(cncpt)) {
       case 0:
         return Collections.<SubstituteMenu>singletonList(new ChildDestination_SubstituteMenu());
       case 1:
@@ -96,8 +96,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredNamedSubstituteMenus(NamedMenuId menuId) {
-    SAbstractConcept cncpt_a0f = (SAbstractConcept) menuId.getConcept();
-    switch (index_xbvbvu_a0f.index(cncpt_a0f)) {
+    SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
+    switch (conceptIndex3.index(cncpt)) {
       case 0:
         if (true) {
           switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a5, menuId.getFqName())) {
@@ -149,10 +149,10 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     return Collections.<SubstituteMenu>emptyList();
   }
 
-  private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6a1bb02ea606232bL), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x69d936b00a0eba02L), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6a1bb02ea6061b82L), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x4aaf5f3861bb9098L), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6912564f422833dbL), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x7c18b9e1882f81cL), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x11106e6008e38ee7L), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x195a5f84d619bfbdL), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x3875e55a78eeb7feL), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x3875e55a78eeb7ddL), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x443e8c43ffcc4608L), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x443e8c43ffcf6763L), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x443e8c43ffc0edbfL), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6c9855e848a0c58L), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x3ec2bbae1bba463bL)).seal();
-  private static final ConceptSwitchIndex index_xbvbvu_a0c = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x3875e55a78eeb7ddL)).seal();
-  private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x4aaf5f3861bb9099L), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6a1bb02ea6061b82L), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x4aaf5f3861adfe77L), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6912564f422833dbL), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x3875e55a78eeb7feL), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x27b12e38d7577b90L)).seal();
-  private static final ConceptSwitchIndex index_xbvbvu_a0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x4aaf5f3861bb9099L), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x4aaf5f3861adfe77L), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6912564f422833dbL), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x3875e55a78eeb7feL), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x27b12e38d7577b90L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6a1bb02ea606232bL), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x69d936b00a0eba02L), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6a1bb02ea6061b82L), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x4aaf5f3861bb9098L), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6912564f422833dbL), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x7c18b9e1882f81cL), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x11106e6008e38ee7L), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x195a5f84d619bfbdL), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x3875e55a78eeb7feL), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x3875e55a78eeb7ddL), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x443e8c43ffcc4608L), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x443e8c43ffcf6763L), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x443e8c43ffc0edbfL), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6c9855e848a0c58L), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x3ec2bbae1bba463bL)).seal();
+  private static final ConceptSwitchIndex conceptIndex1 = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x3875e55a78eeb7ddL)).seal();
+  private static final ConceptSwitchIndex conceptIndex2 = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x4aaf5f3861bb9099L), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6a1bb02ea6061b82L), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x4aaf5f3861adfe77L), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6912564f422833dbL), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x3875e55a78eeb7feL), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x27b12e38d7577b90L)).seal();
+  private static final ConceptSwitchIndex conceptIndex3 = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x4aaf5f3861bb9099L), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x4aaf5f3861adfe77L), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6912564f422833dbL), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x3875e55a78eeb7feL), MetaIdFactory.conceptId(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x27b12e38d7577b90L)).seal();
   private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a5 = new String[]{"org.campagnelab.antlr.tomps.editor.ChildDestination_SmartReference"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a5 = new String[]{"org.campagnelab.antlr.tomps.editor.LabeledElementSource_SmartReference"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0c1a5 = new String[]{"org.campagnelab.antlr.tomps.editor.LexerRuleSource_SmartReference"};

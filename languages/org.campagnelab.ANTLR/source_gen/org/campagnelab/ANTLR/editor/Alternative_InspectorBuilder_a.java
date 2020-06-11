@@ -52,27 +52,27 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_ods2m7_a_0();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_ods2m7_a_0() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_ods2m7_a_0");
+    editorCell.setCellId("Collection_ods2m7_0");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
-    editorCell.addEditorCell(createConstant_ods2m7_a0_0());
-    editorCell.addEditorCell(createReadOnlyModelAccessor_ods2m7_b0());
-    editorCell.addEditorCell(createConstant_ods2m7_c0());
-    editorCell.addEditorCell(createProperty_ods2m7_d0());
+    setCellContext(editorCell);
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createReadOnlyModelAccessor_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createConstant_ods2m7_a0_0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "id=");
-    editorCell.setCellId("Constant_ods2m7_a0_0");
+    editorCell.setCellId("Constant_ods2m7_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createReadOnlyModelAccessor_ods2m7_b0() {
+  private EditorCell createReadOnlyModelAccessor_0() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
       public String getText() {
         return (String) Alternative__BehaviorDescriptor.id_idv1yTSo00D1.invoke(myNode);
@@ -85,19 +85,19 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     }, myNode);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
-    editorCell.setCellId("ReadOnlyModelAccessor_ods2m7_b0");
+    editorCell.setCellId("ReadOnlyModelAccessor_ods2m7_0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createConstant_ods2m7_c0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "hasLabel=");
-    editorCell.setCellId("Constant_ods2m7_c0");
+    editorCell.setCellId("Constant_ods2m7_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_ods2m7_d0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe3113b458fL, 0x6d831d6acf051327L, "hasLabel");

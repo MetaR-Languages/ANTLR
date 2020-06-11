@@ -56,10 +56,8 @@ public class ChildDestination_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              SNode mapper = SNodeOperations.getNodeAncestor(_context.getReferenceNode(), MetaAdapterFactory.getConcept(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x7c18b9e1882f81cL, "org.campagnelab.antlr.tomps.structure.Mapper"), false, false);
-              return ListScope.forResolvableElements(Mapper__BehaviorDescriptor.linkDeclarations_id3xPTlDT1UDq.invoke(mapper, Mapper__BehaviorDescriptor.concept_idv1yTSox$EK.invoke(mapper)));
-            }
+            SNode mapper = SNodeOperations.getNodeAncestor(_context.getReferenceNode(), MetaAdapterFactory.getConcept(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x7c18b9e1882f81cL, "org.campagnelab.antlr.tomps.structure.Mapper"), false, false);
+            return ListScope.forResolvableElements(Mapper__BehaviorDescriptor.linkDeclarations_id3xPTlDT1UDq.invoke(mapper, Mapper__BehaviorDescriptor.concept_idv1yTSox$EK.invoke(mapper)));
           }
         };
       }

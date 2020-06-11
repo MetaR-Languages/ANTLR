@@ -14,6 +14,6 @@ public class FixAlternativeName_QuickFix extends QuickFix_Runtime {
     super(new SNodePointer("r:605281ab-5c41-4f2b-8300-326aa196a028(org.campagnelab.ANTLR.typesystem)", "7627187573642142405"));
   }
   public void execute(SNode node) {
-    SPropertyOperations.set(((SNode) FixAlternativeName_QuickFix.this.getField("alternative")[0]), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString(SNodeOperations.getNodeAncestor(((SNode) FixAlternativeName_QuickFix.this.getField("alternative")[0]), MetaAdapterFactory.getConcept(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x175f2668a88648aaL, "org.campagnelab.ANTLR.structure.Rule"), false, false), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ":");
+    SPropertyOperations.assign(((SNode) FixAlternativeName_QuickFix.this.getField("alternative")[0]), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString(SNodeOperations.getNodeAncestor(((SNode) FixAlternativeName_QuickFix.this.getField("alternative")[0]), MetaAdapterFactory.getConcept(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x175f2668a88648aaL, "org.campagnelab.ANTLR.structure.Rule"), false, false), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ":");
   }
 }

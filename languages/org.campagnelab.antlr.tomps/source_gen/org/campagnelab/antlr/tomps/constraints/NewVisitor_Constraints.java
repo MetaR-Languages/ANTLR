@@ -13,9 +13,6 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.campagnelab.antlr.tomps.behavior.ConvertToMPS__BehaviorDescriptor;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 
 public class NewVisitor_Constraints extends BaseConstraintsDescriptor {
   public NewVisitor_Constraints() {
@@ -36,12 +33,7 @@ public class NewVisitor_Constraints extends BaseConstraintsDescriptor {
       }
       @Override
       public void onReferenceSet(final SNode referenceNode, final SNode oldReferentNode, final SNode newReferentNode) {
-        SPropertyOperations.set(referenceNode, MetaAdapterFactory.getProperty(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x11106e6008e38ee7L, 0x11106e60094fde78L, "generatedClassName"), ConvertToMPS__BehaviorDescriptor.getGeneratedClassName_id14grA09hT8$.invoke(newReferentNode));
-      }
-      @Nullable
-      @Override
-      public ReferenceScopeProvider getScopeProvider() {
-        return new BaseScopeProvider() {};
+        SPropertyOperations.assign(referenceNode, MetaAdapterFactory.getProperty(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x11106e6008e38ee7L, 0x11106e60094fde78L, "generatedClassName"), ConvertToMPS__BehaviorDescriptor.getGeneratedClassName_id14grA09hT8$.invoke(newReferentNode));
       }
     });
     return references;

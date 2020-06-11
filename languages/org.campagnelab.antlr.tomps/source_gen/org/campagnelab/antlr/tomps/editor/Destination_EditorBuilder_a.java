@@ -33,10 +33,10 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   }
 
   /*package*/ EditorCell createCell() {
-    return createReadOnlyModelAccessor_tbkp6n_a();
+    return createReadOnlyModelAccessor_0();
   }
 
-  private EditorCell createReadOnlyModelAccessor_tbkp6n_a() {
+  private EditorCell createReadOnlyModelAccessor_0() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
       public String getText() {
         return (String) Destination__BehaviorDescriptor.name_id2uLbzznpwAh.invoke(myNode);
@@ -51,7 +51,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_tbkp6n_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     Style style = new StyleImpl();
     style.set(StyleAttributes.NAVIGATABLE_NODE, _StyleParameter_QueryFunction_tbkp6n_a0a());
     style.set(StyleAttributes.EDITABLE, false);

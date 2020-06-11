@@ -2,7 +2,7 @@
 <model ref="r:55e80435-9ec6-403f-a9fe-1bb012f47510(org.campagnelab.ANTLR.migration)">
   <persistence version="9" />
   <languages>
-    <use id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration" version="0" />
+    <use id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration" version="1" />
     <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -193,7 +193,7 @@
                   <ref role="3cqZAo" node="7_W4cr_5V2a" resolve="m" />
                 </node>
                 <node concept="liA8E" id="7_W4cr_5V1d" role="2OqNvi">
-                  <ref role="37wK5l" to="lui2:~SModule.getModels():java.lang.Iterable" resolve="getModels" />
+                  <ref role="37wK5l" to="lui2:~SModule.getModels()" resolve="getModels" />
                 </node>
               </node>
             </node>
@@ -223,7 +223,7 @@
                               <ref role="Rm8GQ" to="w1kc:~LanguageAspect.MIGRATION" resolve="MIGRATION" />
                             </node>
                             <node concept="liA8E" id="28AUPoS5aWH" role="2OqNvi">
-                              <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                              <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel)" resolve="is" />
                               <node concept="37vLTw" id="28AUPoS5aWI" role="37wK5m">
                                 <ref role="3cqZAo" node="28AUPoS5aWJ" resolve="model" />
                               </node>
@@ -304,7 +304,7 @@
                         </node>
                       </node>
                       <node concept="liA8E" id="7_W4cr_5V0Y" role="2OqNvi">
-                        <ref role="37wK5l" to="mhbf:~SNode.setProperty(org.jetbrains.mps.openapi.language.SProperty,java.lang.String):void" resolve="setProperty" />
+                        <ref role="37wK5l" to="mhbf:~SNode.setProperty(org.jetbrains.mps.openapi.language.SProperty,java.lang.String)" resolve="setProperty" />
                         <node concept="355D3s" id="7_W4cr_5V0Z" role="37wK5m">
                           <ref role="355D3u" to="ubjp:6cuUYchf495" resolve="isOptional_old" />
                           <ref role="355D3t" to="ubjp:6cuUYchcHx3" resolve="ParserRuleBlock" />
@@ -469,7 +469,7 @@
                   <ref role="3cqZAo" node="7_W4cr_5VKL" resolve="m" />
                 </node>
                 <node concept="liA8E" id="7_W4cr_5VJO" role="2OqNvi">
-                  <ref role="37wK5l" to="lui2:~SModule.getModels():java.lang.Iterable" resolve="getModels" />
+                  <ref role="37wK5l" to="lui2:~SModule.getModels()" resolve="getModels" />
                 </node>
               </node>
             </node>
@@ -499,7 +499,7 @@
                               <ref role="Rm8GQ" to="w1kc:~LanguageAspect.MIGRATION" resolve="MIGRATION" />
                             </node>
                             <node concept="liA8E" id="28AUPoS54Lu" role="2OqNvi">
-                              <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                              <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel)" resolve="is" />
                               <node concept="37vLTw" id="28AUPoS558C" role="37wK5m">
                                 <ref role="3cqZAo" node="28AUPoS59RF" resolve="model" />
                               </node>
@@ -580,7 +580,7 @@
                         </node>
                       </node>
                       <node concept="liA8E" id="7_W4cr_5VJ_" role="2OqNvi">
-                        <ref role="37wK5l" to="mhbf:~SNode.setProperty(org.jetbrains.mps.openapi.language.SProperty,java.lang.String):void" resolve="setProperty" />
+                        <ref role="37wK5l" to="mhbf:~SNode.setProperty(org.jetbrains.mps.openapi.language.SProperty,java.lang.String)" resolve="setProperty" />
                         <node concept="355D3s" id="7_W4cr_5VJA" role="37wK5m">
                           <ref role="355D3t" to="ubjp:6cuUYchcHx3" resolve="ParserRuleBlock" />
                           <ref role="355D3u" to="ubjp:6cuUYchf497" resolve="acceptMultiple_old" />
@@ -745,7 +745,7 @@
                   <ref role="3cqZAo" node="7_W4cr_5VOS" resolve="m" />
                 </node>
                 <node concept="liA8E" id="7_W4cr_5VNV" role="2OqNvi">
-                  <ref role="37wK5l" to="lui2:~SModule.getModels():java.lang.Iterable" resolve="getModels" />
+                  <ref role="37wK5l" to="lui2:~SModule.getModels()" resolve="getModels" />
                 </node>
               </node>
             </node>
@@ -775,7 +775,7 @@
                               <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
                             </node>
                             <node concept="liA8E" id="28AUPoS5dDM" role="2OqNvi">
-                              <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                              <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel)" resolve="is" />
                               <node concept="37vLTw" id="28AUPoS5dDN" role="37wK5m">
                                 <ref role="3cqZAo" node="28AUPoS5dDO" resolve="model" />
                               </node>
@@ -856,7 +856,7 @@
                         </node>
                       </node>
                       <node concept="liA8E" id="7_W4cr_5VNG" role="2OqNvi">
-                        <ref role="37wK5l" to="mhbf:~SNode.setProperty(org.jetbrains.mps.openapi.language.SProperty,java.lang.String):void" resolve="setProperty" />
+                        <ref role="37wK5l" to="mhbf:~SNode.setProperty(org.jetbrains.mps.openapi.language.SProperty,java.lang.String)" resolve="setProperty" />
                         <node concept="355D3s" id="7_W4cr_5VNH" role="37wK5m">
                           <ref role="355D3u" to="ubjp:7a2u8aS_VBl" resolve="plus_old" />
                           <ref role="355D3t" to="ubjp:6cuUYchcHx3" resolve="ParserRuleBlock" />

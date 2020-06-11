@@ -2,7 +2,7 @@
 <model ref="r:8fcdc1d5-62b0-49c3-b59b-b0f3e41cf2ff(org.campagnelab.ANTLR.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="11" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="12" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -512,7 +512,7 @@
             <node concept="3clFbS" id="3ft5eLKFXWm" role="2VODD2">
               <node concept="3clFbF" id="3ft5eLKFZ12" role="3cqZAp">
                 <node concept="2YIFZM" id="3ft5eLKFZ3L" role="3clFbG">
-                  <ref role="37wK5l" to="wyt6:~Boolean.toString(boolean):java.lang.String" resolve="toString" />
+                  <ref role="37wK5l" to="wyt6:~Boolean.toString(boolean)" resolve="toString" />
                   <ref role="1Pybhc" to="wyt6:~Boolean" resolve="Boolean" />
                   <node concept="2OqwBi" id="3ft5eLKFYax" role="37wK5m">
                     <node concept="pncrf" id="3ft5eLKFY5A" role="2Oq$k0" />
@@ -564,7 +564,7 @@
               <node concept="3clFbF" id="3ft5eLKGR2W" role="3cqZAp">
                 <node concept="2YIFZM" id="3ft5eLKGR2X" role="3clFbG">
                   <ref role="1Pybhc" to="wyt6:~Boolean" resolve="Boolean" />
-                  <ref role="37wK5l" to="wyt6:~Boolean.toString(boolean):java.lang.String" resolve="toString" />
+                  <ref role="37wK5l" to="wyt6:~Boolean.toString(boolean)" resolve="toString" />
                   <node concept="2OqwBi" id="3ft5eLKGR2Y" role="37wK5m">
                     <node concept="pncrf" id="3ft5eLKGR2Z" role="2Oq$k0" />
                     <node concept="2qgKlT" id="3ft5eLKGR30" role="2OqNvi">

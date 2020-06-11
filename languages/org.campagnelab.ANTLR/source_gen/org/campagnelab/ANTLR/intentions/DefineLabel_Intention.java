@@ -71,7 +71,7 @@ public final class DefineLabel_Intention extends AbstractIntentionDescriptor imp
       SNode labeled = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x7c18b9e17b73a85L, "org.campagnelab.ANTLR.structure.LabeledElement"));
       SNodeOperations.replaceWithAnother(node, labeled);
       SLinkOperations.setTarget(labeled, MetaAdapterFactory.getContainmentLink(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x7c18b9e17b73a85L, 0x7c18b9e17b7c72fL, "element"), node);
-      SPropertyOperations.set(labeled, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), myParameter);
+      SPropertyOperations.assign(labeled, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), myParameter);
     }
     @Override
     public IntentionDescriptor getDescriptor() {

@@ -52,18 +52,18 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_h5wjze_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_h5wjze_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_h5wjze_a");
-    editorCell.addEditorCell(createReadOnlyModelAccessor_h5wjze_a0());
-    editorCell.addEditorCell(createConstant_h5wjze_b0());
-    editorCell.addEditorCell(createProperty_h5wjze_c0());
+    editorCell.addEditorCell(createReadOnlyModelAccessor_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
-  private EditorCell createReadOnlyModelAccessor_h5wjze_a0() {
+  private EditorCell createReadOnlyModelAccessor_0() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
       public String getText() {
         return (String) Source__BehaviorDescriptor.name_id3xPTlDSWS6G.invoke(myNode);
@@ -82,7 +82,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createConstant_h5wjze_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ":");
     editorCell.setCellId("Constant_h5wjze_b0");
     Style style = new StyleImpl();
@@ -92,7 +92,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_h5wjze_c0() {
+  private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
       final SProperty property = MetaAdapterFactory.getProperty(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x3875e55a78eeb7ddL, 0x32ac4b93a6b7ec8L, "cardinality");

@@ -118,7 +118,7 @@ public final class ConceptMapper__BehaviorDescriptor extends BaseBHDescriptor {
     })) {
       SNode decl = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
       SModelOperations.addRootNode(structureModel, decl);
-      SPropertyOperations.set(decl, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), upperCasedName);
+      SPropertyOperations.assign(decl, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), upperCasedName);
       return decl;
     } else {
       return null;
@@ -314,7 +314,7 @@ public final class ConceptMapper__BehaviorDescriptor extends BaseBHDescriptor {
     final Wrappers._T<String> cardinality = new Wrappers._T<String>();
     return MultiTuple.<SNode,String>from(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getChildren(altMapper, MetaAdapterFactory.getContainmentLink(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6a1bb02ea606232bL, 0x7c18b9e1882f807L, "map"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode mapper) {
-        cardinality.value = SPropertyOperations.getString_def(SLinkOperations.getTarget(mapper, MetaAdapterFactory.getContainmentLink(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x7c18b9e1882f81cL, 0x3875e55a78ffcbddL, "source")), MetaAdapterFactory.getProperty(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x3875e55a78eeb7ddL, 0x32ac4b93a6b7ec8L, "cardinality"), "0..1");
+        cardinality.value = SPropertyOperations.getString(SLinkOperations.getTarget(mapper, MetaAdapterFactory.getContainmentLink(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x7c18b9e1882f81cL, 0x3875e55a78ffcbddL, "source")), MetaAdapterFactory.getProperty(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x3875e55a78eeb7ddL, 0x32ac4b93a6b7ec8L, "cardinality"));
         return Objects.equals(Source__BehaviorDescriptor.name_id3xPTlDSWS6G.invoke(SLinkOperations.getTarget(mapper, MetaAdapterFactory.getContainmentLink(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x7c18b9e1882f81cL, 0x3875e55a78ffcbddL, "source"))), ruleRefName);
       }
     }), MetaAdapterFactory.getContainmentLink(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x7c18b9e1882f81cL, 0x4aaf5f3861bb9078L, "destination")), cardinality.value);

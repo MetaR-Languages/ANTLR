@@ -52,7 +52,7 @@ public final class AddTrimCharacters_Intention extends AbstractIntentionDescript
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6912564f422833dbL, 0x3ec2bbae1b81ad54L, "hasTrim"), "" + (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6912564f422833dbL, 0x3ec2bbae1b81ad54L, "hasTrim")))));
+      SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6912564f422833dbL, 0x3ec2bbae1b81ad54L, "hasTrim"), !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6912564f422833dbL, 0x3ec2bbae1b81ad54L, "hasTrim"))));
     }
     @Override
     public IntentionDescriptor getDescriptor() {

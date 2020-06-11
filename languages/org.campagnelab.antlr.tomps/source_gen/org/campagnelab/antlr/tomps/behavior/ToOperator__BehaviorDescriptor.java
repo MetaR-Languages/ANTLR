@@ -37,7 +37,7 @@ public final class ToOperator__BehaviorDescriptor extends BaseBHDescriptor {
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(name_id2uLbzznpwAh, to_idWSCumwYo$I, type_id5qM9mr9Mqo7, cellModel_id1AEWcuffMHI, textGenAppendPart_id3V2IUSqzmkO);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
-    SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6c9855e848a0c58L, 0x6c9855e84f34171L, "arity"), "" + (2));
+    SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6c9855e848a0c58L, 0x6c9855e84f34171L, "arity"), 2);
   }
 
   /*package*/ static String name_id2uLbzznpwAh(@NotNull SNode __thisNode__) {

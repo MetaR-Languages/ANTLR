@@ -33,28 +33,28 @@ import jetbrains.mps.nodeEditor.MPSFonts;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_1jph1g_a();
+    return createCollection_0();
   }
 
-  private EditorCell createCollection_1jph1g_a() {
+  private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_1jph1g_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
-    editorCell.addEditorCell(createComponent_1jph1g_a0());
+    setCellContext(editorCell);
+    editorCell.addEditorCell(createComponent_0());
     if (nodeCondition_1jph1g_a1a()) {
-      editorCell.addEditorCell(createConstant_1jph1g_b0());
+      editorCell.addEditorCell(createConstant_0());
     }
     return editorCell;
   }
   private boolean nodeCondition_1jph1g_a1a() {
     return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6912564f422833dbL, 0x11d5dff406a4c13dL, "forceGetText"));
   }
-  private EditorCell createComponent_1jph1g_a0() {
+  private EditorCell createComponent_0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "org.campagnelab.antlr.tomps.editor.SourceEditorComponent");
     return editorCell;
   }
-  private EditorCell createConstant_1jph1g_b0() {
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ".getText()");
     editorCell.setCellId("Constant_1jph1g_b0");
     Style style = new StyleImpl();

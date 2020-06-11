@@ -29,8 +29,8 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
     }
 
     IntentionFactory[] intentions = EMPTY_ARRAY;
-    SAbstractConcept cncpt_d0f = concept;
-    switch (index_hphjzv_d0f.index(cncpt_d0f)) {
+    SAbstractConcept cncpt = concept;
+    switch (conceptIndex.index(cncpt)) {
       case 0:
         if (true) {
           // Concept: Grammar 
@@ -69,5 +69,5 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
     rv[3] = new DefineLabel_Intention();
     return Arrays.asList(rv);
   }
-  private static final ConceptSwitchIndex index_hphjzv_d0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe3113222a9L), MetaIdFactory.conceptId(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe31132d838L), MetaIdFactory.conceptId(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe31132d843L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe3113222a9L), MetaIdFactory.conceptId(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe31132d838L), MetaIdFactory.conceptId(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe31132d843L)).seal();
 }

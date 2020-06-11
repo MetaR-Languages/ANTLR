@@ -79,7 +79,7 @@ public final class RenameLabelsFromConceptsIn_Intention extends AbstractIntentio
               if (returnNamePrefix.endsWith(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(altMapper, MetaAdapterFactory.getReferenceLink(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6a1bb02ea606232bL, 0x61426312a570c5d7L, "conceptMapper")), MetaAdapterFactory.getReferenceLink(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x69d936b00a0eba02L, 0x69d936b00a0eba03L, "concept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
                 returnNamePrefix = returnNamePrefix.substring(0, returnNamePrefix.length() - conceptName.length());
               }
-              SPropertyOperations.set(SLinkOperations.getTarget(altMapper, MetaAdapterFactory.getReferenceLink(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6a1bb02ea606232bL, 0x6a1bb02ea6062391L, "alternative")), MetaAdapterFactory.getProperty(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe3113b458fL, 0x6d831d6acef0ba05L, "label"), returnNamePrefix);
+              SPropertyOperations.assign(SLinkOperations.getTarget(altMapper, MetaAdapterFactory.getReferenceLink(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6a1bb02ea606232bL, 0x6a1bb02ea6062391L, "alternative")), MetaAdapterFactory.getProperty(0xd6782141eafa4cf7L, 0xa85d1229abdb1152L, 0x631eebe3113b458fL, 0x6d831d6acef0ba05L, "label"), returnNamePrefix);
             }
           }
         }

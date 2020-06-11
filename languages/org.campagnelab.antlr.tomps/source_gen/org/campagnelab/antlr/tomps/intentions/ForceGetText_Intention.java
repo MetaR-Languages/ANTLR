@@ -52,7 +52,7 @@ public final class ForceGetText_Intention extends AbstractIntentionDescriptor im
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6912564f422833dbL, 0x11d5dff406a4c13dL, "forceGetText"), "" + (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6912564f422833dbL, 0x11d5dff406a4c13dL, "forceGetText")))));
+      SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6912564f422833dbL, 0x11d5dff406a4c13dL, "forceGetText"), !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x932d719ce93144d5L, 0x990ce115f79b5942L, 0x6912564f422833dbL, 0x11d5dff406a4c13dL, "forceGetText"))));
     }
     @Override
     public IntentionDescriptor getDescriptor() {
